@@ -1,0 +1,78 @@
+extends ../layout
+
+block angularVariables
+    - var angularApp = 'gamePreparation'
+block jsScripts
+    script(src='/modules/angular.sortable.js')
+    script(src='/vendor/angular-sanitize/angular-sanitize.min.js')
+    script(src='/modules/eg.routes.js')
+    script(src='/modules/eg.gamePreparation.js')
+    script(src='/bootstrap-select/dist/js/bootstrap-select.min.js')
+    script(src='/bower_components/ng-file-upload/angular-file-upload.min.js')
+
+
+block cssFiles
+    link(rel="stylesheet", href="/bootstrap-select/dist/css/bootstrap-select.min.css")
+
+block content
+
+    br
+    br
+    div.content(ng-controller="GamePreparationController", ng-init="init('#{id}')")
+        include preparation/new-card
+
+        //p.alert.alert-danger
+        //    | You can only create cards from existing issues. <br/>
+        //    | To do this - either import issues by label (enter label in the box below and click Import)
+        //    | or by issue key (click Add new Card in the bottom)
+
+        //form.form-horizontal
+        //    div(ng-class="importFormClass || 'has-warning'").form-group
+        //        label.col-sm-5.control-label {{ importFormLabel || 'Import from label' }}
+        //        div.col-sm-2
+        //            input(type="text", id="gameName", placeholder="Enter label", ng-model="label").form-control
+        //        div.col-sm-5
+        //            button(type="button", ng-click="importFromJiraREST($event)", btn-label).btn.btn-success Import
+
+        form.form-horizontal
+            div.form-group
+                div.col-sm-4
+                    input(type="text", id="gameName", placeholder="Game name", ng-model="game.name").form-control
+                div.col-sm-2
+                div.col-sm-6
+
+        table.table.table-hover#cardsTable
+            thead
+                tr
+                    th.col-md-1 key
+                    th title
+                    th link
+                    th.col-md-1 On table?
+                    th.col-md-1 Action
+            tbody#sortableCardsInfo(ui-sortable, ng-model="game.cards")
+                tr(ng-repeat="card in game.cards")
+                    td: input(type="text", ng-model="card.key", disabled).form-control
+                    td: input(type="text", ng-model="card.title").form-control
+                    td: input(type="text", ng-model="card.link").form-control
+                    td.isReference: input(type="checkbox", ng-model="card.isReference", ng-checked="card.isReference")
+                    td
+                        button(type="button", ng-click="showEditCardDialog(card)").btn.btn-xs.btn-info Edit
+                        br
+                        button(type="button", ng-click="removeCard(card)").btn.btn-xs.btn-danger Remove
+        table.table
+            tbody
+                tr#formControlButtons
+                    td.col-md-1
+                    td.text-right
+                        button(type="button", btn-label, ng-disabled="!game.cards.length", ng-click="update($event)").btn.btn-sm.btn-success Save / Start
+                    td.text-right.col-md-1
+                        //input(type="file", ng-file-select="onFileSelect($files)")
+                        button(type="file", ng-file-select="onFileSelect($files)").btn.btn-sm.btn-default From file
+                    td.text-right.col-md-1
+                        button(type="button", ng-click="reverseOrder()").btn.btn-sm.btn-default Reverse order
+                    td.text-right.col-md-1
+                        button(type="button", ng-click="showNewCardDialog()").btn.btn-sm.btn-warning New Card
+        p
+        div(ng-show="game.state == 'active'").panel.panel-info
+            div.panel-heading.text-center
+                a(type="button", href="{{ backendRoutes.gameActive(game._id) }}").btn.btn-lg.btn-info To Game

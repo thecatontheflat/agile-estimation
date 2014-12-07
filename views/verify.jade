@@ -1,0 +1,17 @@
+extends layout
+
+block angularVariables
+    - var angularApp = 'reg-auth'
+
+block jsScripts
+    script(src='/modules/eg.reg-auth.js')
+
+block content
+    div.content-static-page
+        p.alert.alert-success Your email has been successfully verified. Thanks!
+        p.alert.alert-success You can login now.
+        - if(!loggedIn)
+            include homepage/parts/registerOrLoginForm
+
+block bottomJsScripts
+    != '<!-- Google Code for Email verified Conversion Page --><script type="text/javascript">/* <![CDATA[ */var google_conversion_id = 970303543;var google_conversion_language = "en";var google_conversion_format = "1";var google_conversion_color = "ffffff";var google_conversion_label = "BBA6CJH9-wkQt9DWzgM";var google_remarketing_only = false;/* ]]> */</script><script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script><noscript><div style="display:inline;"><img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/970303543/?label=BBA6CJH9-wkQt9DWzgM&amp;guid=ON&amp;script=0"/></div></noscript>'

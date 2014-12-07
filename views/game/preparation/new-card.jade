@@ -1,0 +1,26 @@
+#newCardDialog.modal.fade
+    .modal-dialog
+        .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal')
+                    span(aria-hidden='true') ×
+                    span.sr-only Close
+                h4.modal-title New Card
+            .modal-body
+                form(role='form', name='form', class='css-form', novalidate)#newCardDialogForm
+                    .form-group.has-feedback
+                        input.form-control(type='text', placeholder='Key, field is required', required='required', ng-model='newCard.key', name='key')#newCardKey
+                    .form-group
+                        input.form-control(type='text', placeholder='URL', ng-model='newCard.link', name='link')#newCardLink
+                    .form-group
+                        input.form-control(type='text', placeholder='Title, field is required', required='required', ng-model='newCard.title', name='title')#newCardTitle
+                    .form-group#newCardIcon
+                        select(ng-model='newCard.typeIcon').form-control.selectpicker
+                            each cardIcon, cardType in cardIcons
+                                option(data-icon="#{cardIcon}", value="#{cardIcon}") - #{cardType}
+                    .form-group
+                        input.form-control(type='text', placeholder='Reporter', ng-model='newCard.reporter')#newCardReporter
+                    .form-group
+                        label Description (HTML)
+                        textarea.form-control(ng-model='newCard.description')#newCardDescription
+                    button.btn.btn-primary(type='button', ng-click='newCardSubmit()', ng-disabled='form.$invalid') Submit

@@ -1,0 +1,16 @@
+extends ./layout
+
+block angularVariables
+    - var angularApp = 'lobby'
+block jsScripts
+    script(src='/modules/eg.routes.js')
+    script(src='/modules/eg.lobby.js')
+
+block content
+    div.content
+        div.content-header.lead(ng-controller="LobbyController")
+            p No license was found
+            p Please, start Trial
+        p.text-center Have problems starting trial? Contact your Jira administrator
+        p.text-center: a(href="https://www.youtube.com/watch?v=sdx1PZMIPWU", target="_blank") Watch demo
+        p.text-center: a(href="http://agile-values.com/add-on-documentation/", target="_blank") Read documentation

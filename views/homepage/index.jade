@@ -1,0 +1,20 @@
+extends ../layout
+
+block angularVariables
+    - var angularApp = 'reg-auth'
+
+block jsScripts
+    script(src='/modules/eg.reg-auth.js')
+
+block content
+    div.content-static-page
+        br
+        include parts/registerOrLoginForm
+        br
+        p.bg-info You're almost there!
+
+        ol.bg-success
+            li Register
+            li Check your email
+            li Login
+            li Start estimating

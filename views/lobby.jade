@@ -1,0 +1,37 @@
+extends ./layout
+
+block angularVariables
+    - var angularApp = 'lobby'
+block jsScripts
+    script(src='/modules/eg.routes.js')
+    script(src='/modules/eg.lobby.js')
+
+block content
+    div.content(ng-controller="LobbyController")
+        div.content-header.lead
+            br
+            .pull-left
+                button(type="button", data-toggle="popover").btn.btn-default.dropdown-toggle#helpButton Help
+                    span.caret
+            form(role="form", fm-action, action="/game/create", method="post").form-inline
+                include commonParts/message
+                div.form-group
+                a(href="https://www.youtube.com/watch?v=pWf9A_qUUj4", target="_blank").btn.btn-info Demo video
+                a(href='/user/logout').btn.btn-danger Log Out
+                button(type="submit", btn-label, ng-click="createNewGame($event)").btn.btn-success New Game
+
+        div.row
+            div.col-sm-3 &nbsp
+            div(ng-show="games.activeGames.length").col-sm-6
+                h3 Active
+                div.list-group
+                    a(href="{{ getActiveGameUrl(game._id) }}", ng-repeat="game in games.activeGames").list-group-item.list-group-item-success {{ game.name ? game.name : 'no name' }}
+            div.col-sm-3 &nbsp
+
+        div.row
+            div.col-sm-3 &nbsp
+            div(ng-show="games.archiveGames.length").col-sm-6
+                h3 Archive
+                div.list-group
+                    a(href="{{ getActiveGameUrl(game._id) }}", ng-repeat="game in games.archiveGames").list-group-item.list-group-item-warning {{ game.name ? game.name : 'no name' }}
+            div.col-sm-3 &nbsp

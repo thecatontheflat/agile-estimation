@@ -1,0 +1,7 @@
+div#message
+    p(class="alert alert-danger", ng-model="ajaxError.message", ng-show="ajaxError")
+        | {{ajaxError.message}}
+    ul(ng-show="ajaxError", ng-repeat="errorDetail in ajaxError.details")
+        li {{errorDetail}}
+    p(class="alert alert-success", ng-model="ajaxSuccess.message", ng-show="ajaxSuccess")
+        | {{ajaxSuccess.message}}

@@ -1,0 +1,57 @@
+extends layout
+
+block angularVariables
+    - var angularApp = 'reg-auth'
+
+block variables
+    - var pageTitle = 'Agile Estimation 3.0 - an agile planning tool based on the team estimation game'
+
+block jsScripts
+    script(src='/modules/eg.reg-auth.js')
+
+block content
+    div.content-static-page
+        h1.page-header How to play the Team Estimation Game
+        p!= '<strong>The Team Estimation Game</strong> is the best alternative estimation technique we’ve found so far to get a scrum team up-and-running with useful estimates.'
+        p It plays like a game, feels like a game tastes like a game, but it accomplishes a valuable work: assigning story point estimates to user stories. Yes, this is quote obvious for agile software developers.
+        p!= 'Scrum teams using this agile methodology are typically able to perform effective and accurate estimation, handling from <strong>20 to 60 stories in an hour</strong>. The method was described by <a href="http://www.amazon.com/Steve-Bockman/e/B00D0SNV1Y" target=_blank>Steve Bockman.</a>'
+        p
+            | This agile estimation technique perfectly suits not only for user stories estimation, but also for backlog grooming.
+        p
+            | We adopted this method to fulfill the needs of distributed teams and created the onlint tool for estimation, that is extremely valuable for experienced scrummasters and mature software development teams.
+        p So, below are the rules.
+        p
+            | A typical game sessions consists of two parts:
+            strong  Line Up
+            |  and
+            strong  Estimate
+            | .
+        p!= 'Okay, for a scrummaster there is an extra part - <strong>Preparation</strong>, which is covered in the video on the <a href="/how-to">How to</a> page.'
+
+        h2.page-header Part I: Line Up
+        p
+            | A game starts with 1 card laying on the table (this will be an anchor point for our future comparisons) and the deck of cards. As you might have noticed - each card represent a story or task.
+        p
+            | First player picks a card from the deck and moves it either on the left or on the right to the reference card, which lays on the table.
+            strong  Left - easier, right - more complex
+            | . Turn goes to the next player.
+        p
+            | Next player has to check the table now - if she agrees with the sequence, then she picks next card from the deck and puts it to the desired position (left, right, between, etc). Turn goes to the next player. If she disagreed with the cards on the table - she would have to pick a card from the table instead of the deck (
+            strong discussion happens here
+            | ).
+        p
+            | This repeats until all cards are on the table (the deck is empty) and until all players agree on the sequence of the cards (no more shuffles, everyone is skipping his turn).
+
+        h2.page-header Part II: Estimate
+        p
+            | The first player now attempts to define the estimation ranges for the cards by dragging the slider. When she finishes - turn goes to another player, who then either skips (if she agrees) or adjusts the ranges if she disagree (
+            strong discussion happens here
+            | ).
+
+        br
+        h2.page-header That's it!
+        p Sounds simple, doesn't it? Don't believe? Try it!
+        br
+        br
+        - if(!loggedIn)
+            include homepage/parts/registerOrLoginForm

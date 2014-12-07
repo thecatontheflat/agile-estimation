@@ -1,0 +1,9 @@
+form#newUser(role="form", method="POST", fm-action, action="/user/new", login-action="/user/login", ng-controller="registerController").form-inline
+    include ../../commonParts/message
+    div.form-group
+        input(type='email', placeholder='Email', ng-model="user.email", autofocus="autofocus").form-control
+    div.form-group
+        input(type='password', placeholder='Password', ng-model="user.password").form-control
+    button(type='button', btn-label, ng-click="user.registerAction($event)").btn.btn-info Register
+        | &nbsp;
+    button(type="button", btn-label, ng-click="user.loginAction($event)").btn.btn-success Login

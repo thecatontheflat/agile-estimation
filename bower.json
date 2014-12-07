@@ -1,0 +1,36 @@
+{
+  "name": "Agile Estimation",
+  "version": "0.0.1",
+  "authors": [
+    "alexriziy@gmail.com",
+    "vitaliy.zurian@gmail.com"
+  ],
+  "description": "Agile Estimation Game",
+  "license": "GNU",
+  "main": "server.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "frontend/vendor",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "angular": "~1.2.2",
+    "angular-route": "~1.2.2",
+    "angular-resource": "~1.2.2",
+    "angular-cookie": "~4.0.0",
+    "jquery": "~2.0.3",
+    "jquery-ui": "~1.10.3",
+    "pure": "~0.4.2",
+    "ng-file-upload": "~1.6.12",
+    "angular-sanitize": "~1.2.16",
+    "bootstrap": "~3.1.1",
+    "jquery-migrate": "~1.2.1",
+    "angular-animate": "~1.2.16",
+    "angular-markdown-filter": "*",
+    "ng-file-upload-shim": "~1.6.12"
+  }
+}

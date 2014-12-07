@@ -1,0 +1,125 @@
+a:focus {
+    outline: none;
+    border: none;
+}
+
+.content > h2 {
+    color: #45ace4;
+    font-weight: 300;
+    margin: 50px 0 20px;
+    width: 30%;
+    border-bottom: 1px solid #45ace4;
+}
+
+.content-static-page {
+    margin-left: 170px;
+    margin-bottom: 170px;
+    width: 800px;
+}
+
+.content-static-page > h1,
+.content-static-page > h2,
+.content-static-page > h3 {
+    color: #45ace4;
+    font-weight: 300;
+    margin: 50px 0 20px;
+    /*width: 30%;*/
+    border-bottom: 1px solid #45ace4;
+}
+
+.lead {
+    padding-bottom: 20px;
+}
+
+.lead > span {
+    font-size: 9px;
+}
+
+.form-inline > * {
+    margin-left: 5px;
+}
+
+.content-header {
+    text-align: center;
+    border-bottom: 1px solid #EEEEEE;
+    color: #333333;
+}
+
+    .content-header h1 {
+        font-size: 2em;
+        font-weight: 100;
+        margin: 0.2em 0;
+    }
+
+    .content-header h2 {
+        color: #CCCCCC;
+        font-weight: 100;
+        margin-top: 0;
+        padding: 0;
+        font-size: 1.2em;
+    }
+
+#sortableCardsInfo tr {
+    cursor: move;
+}
+
+.navbar-nav > li > a {
+    line-height: 0;
+}
+
+.navbar {
+    min-height: 20px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.content-static-page {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+body {
+    min-height: 800px;
+}
+
+.img-thumbnail.active {
+    background-color: yellow;
+}
+
+.css-form input.ng-invalid.ng-dirty {
+    border: solid 1px #FA787E;
+}
+
+.content-static-page p {
+    padding: 15px;
+}
+
+.content-static-page ol {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.content-header.lead .popover-content {
+    font-size: 12px;
+    line-height: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}

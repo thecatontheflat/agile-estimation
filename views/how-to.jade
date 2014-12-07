@@ -1,0 +1,28 @@
+extends layout
+
+block angularVariables
+    - var angularApp = 'reg-auth'
+
+block jsScripts
+    script(src='/modules/eg.reg-auth.js')
+
+block content
+    div.content-static-page
+        h2.page-header Gameplay Demo
+        ol
+            li Pick a card from the deck
+            li Try to compare it to the reference card (blue)
+            li If the picked card is easier comparing to the reference - it should be placed on the left and vice versa
+            li When all cards are on the table - try to adjust estimation handles
+        br
+        p!= '<iframe width="800" height="500" src="//www.youtube.com/embed/0324MsKFPo0?rel=0" frameborder="0" allowfullscreen></iframe>'
+
+        h2.page-header How to create a game session
+        ol
+            li Login, go to te Lobby
+            li Enter a new game name
+            li Start adding stories either manually or import them from Jira file
+            li Click Save
+            li Play button appears, click it and share the link
+        br
+        p!= '<iframe width="800" height="500" src="//www.youtube.com/embed/tGIZlFAQnCI?rel=0" frameborder="0" allowfullscreen></iframe>'
