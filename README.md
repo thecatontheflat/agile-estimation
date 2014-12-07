@@ -1,4 +1,4 @@
-# Estimation-tool
+# Agile Estimation
 
 ## Installation
 
