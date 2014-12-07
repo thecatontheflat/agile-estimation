@@ -1,5 +1,6 @@
 var express = require('express');
-var appInfo = require('./package.json');
+var packageInfo = require('./package.json');
+var config = require('./config.json');
 var routes = require('./routes');
 var indexController = require('./routes/index');
 var importController = require('./routes/import');
@@ -18,7 +19,7 @@ var app = express();
 
 // Database connection
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/' + appInfo.database.name);
+mongoose.connect('mongodb://localhost/' + config.database.name);
 
 // Session storage, using MongoDB
 var MongoStore = require('connect-mongostore')(express);
@@ -58,7 +59,7 @@ app.all('/game/prepare/:id', helpers.requireAuthentication);
 
 // Production only
 if ('prod' == environment) {
-    console.log('Production mode. Version: ', appInfo.version);
+    console.log('Production mode. Version: ', packageInfo.version);
 }
 
 // Development only
@@ -69,7 +70,7 @@ if ('dev' == environment) {
         console.log("Node NOT Exiting...");
     });
 
-    console.log('Development mode. Version: ', appInfo.version);
+    console.log('Development mode. Version: ', packageInfo.version);
     app.use(express.errorHandler());
 }
 

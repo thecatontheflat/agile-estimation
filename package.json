@@ -30,9 +30,6 @@
         "socket.io": "^1.2.0",
         "zeparser": "0.0.7"
     },
-    "database": {
-        "name": "agile_estimation"
-    },
     "devDependencies": {
         "grunt": "~0.4.4",
         "grunt-contrib-uglify": "~0.2.7",
