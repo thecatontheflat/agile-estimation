@@ -30,8 +30,15 @@ http://estimation.agile-values.com/
 
 ### How to run it locally
 
+Clone the project
 ```
 git clone git@github.com:thecatontheflat/agile-estimation.git
+```
+
+Edit your email settings for user verification
+
+Run the project
+```
 cd agile-estimation
 node server.js
 ```
