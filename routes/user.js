@@ -1,8 +1,6 @@
 var UserModel = require('../models/user').User;
-var VerificationToken = require('../models/user').VerificationToken;
 var passport = require('passport');
 var helpers = require('../helpers/helpers');
-var mongoIdPattern = /^[0-9a-fA-F]{24}$/;
 
 /**
  * Sign up user
@@ -12,63 +10,13 @@ var mongoIdPattern = /^[0-9a-fA-F]{24}$/;
 exports.registerAction = function (req, res) {
     var postedUser = req.param('user');
 
-    VerificationToken.register(new VerificationToken({email: postedUser.email}), postedUser.password, function (error, addedToken) {
+    UserModel.register(new UserModel({email: postedUser.email}), postedUser.password, function (error) {
         if (null === error) {
-            var nodeMailer = require('nodemailer');
-            var transporter = nodeMailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    user: '___',
-                    pass: '___'
-                }
-            });
-
-            transporter.sendMail({
-                from: '___',
-                to: postedUser.email,
-                subject: 'Email Validation',
-                text: 'To confirm your email please visit this link: http://estimation.agile-values.com/verify/' + addedToken._id
-            });
-
             res.json(201, {success: {message: 'Verification email was sent'}});
-
-            return;
+        } else {
+            res.json(400, {error: helpers.mongooseErrorReport(error)});
         }
-
-        res.json(400, {error: helpers.mongooseErrorReport(error)});
     });
-};
-
-/**
- * Verify up user
- *
- * @param {Object} req
- * @param {Object} res
- */
-exports.verifyUserAction = function (req, res) {
-    var userId = req.param('id');
-    if (null !== userId.match(mongoIdPattern)) {
-        VerificationToken.findOne({_id: userId}, function (err, token) {
-            if (token == null || err != null) {
-                return res.redirect('/');
-            }
-
-            var user = new UserModel({
-                email: token.email,
-                salt: token.salt,
-                hash: token.hash,
-                _id: token._id
-            });
-
-            user.save(function (err, user) {
-                token.remove();
-                res.render('verify');
-            });
-        });
-    } else {
-        res.redirect('/');
-    }
-
 };
 
 /**

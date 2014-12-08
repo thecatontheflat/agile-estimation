@@ -88,7 +88,6 @@ app.get('/game/api/list', gameController.listActionApi);
 app.get('/game/api/find/:id', gameController.findOneApi);
 app.post('/game/api/update/:id', gameController.updateActionApi);
 app.get('/game/api/players/remove/:id', gameController.removeGamePlayersApi);
-app.get('/verify/:id', userController.verifyUserAction);
 
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
