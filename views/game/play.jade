@@ -21,7 +21,7 @@ block cssFiles
     link(rel="stylesheet", href="/css/jquery-ui.min.css")
 
 block gamePlay
-    div(ng-controller="playGameController", ng-init="init('#{id}', #{isGameOwner}, #{isUserExist}, '#{avatar}'), id="gameController")
+    div(ng-controller="playGameController", ng-init="init('#{id}', #{isGameOwner}, #{isUserExist}, '#{avatar}')", id="gameController")
         h4(ng-show="gameFinished").text-warning.text-center Game is finished &nbsp
             a(ng-show="#{isGameOwner}", href="/lobby") Return to the Lobby
         .navbar.navbar-default(ng-show="#{isGameOwner}")#gameOwnerControls
