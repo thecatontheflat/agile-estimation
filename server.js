@@ -19,7 +19,7 @@ var app = express();
 
 // Database connection
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/' + config.database.name);
+mongoose.connect(config.database.path);
 
 // Session storage, using MongoDB
 var MongoStore = require('connect-mongostore')(express);
@@ -87,13 +87,11 @@ app.get('/game/play/:id', gameController.playAction);
 app.get('/game/api/list', gameController.listActionApi);
 app.get('/game/api/find/:id', gameController.findOneApi);
 app.post('/game/api/update/:id', gameController.updateActionApi);
-//app.post('/game/api/finish-preparation/:id', gameController.finishPreparationApi);
 app.get('/game/api/players/remove/:id', gameController.removeGamePlayersApi);
 app.get('/verify/:id', userController.verifyUserAction);
 
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
-//io.set('log level', 2);
 var GameModel = require('./models/game').Game;
 
 io.sockets.on('connection', function (client) {
@@ -124,14 +122,6 @@ io.sockets.on('connection', function (client) {
     client.on('joinGame', function (emitData) {
         client['room'] = emitData.gameId;
         client['name'] = emitData.userName;
-
-        //Increased limit to 20 sockets. Just to be safe.
-        //TODO: Fix, doesn't work with socket 1.2.0
-//        if (io.sockets.clients(emitData.gameId).length >= 20) {
-//            client.emit('error', 'There are too many people in the room already, sorry');
-//
-//            return;
-//        }
 
         client.join(emitData.gameId);
 
