@@ -1,0 +1,5 @@
+{
+  "database": {
+    "path": "mongodb://localhost/agile_estimation"
+  }
+}

@@ -1,6 +1,6 @@
 var express = require('express');
-var appInfo = require('./package.json');
-var routes = require('./routes');
+var packageInfo = require('./package.json');
+var config = require('./config.json');
 var indexController = require('./routes/index');
 var importController = require('./routes/import');
 var gameController = require('./routes/game');
@@ -8,8 +8,8 @@ var userController = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
 var UserModel = require('./models/user').User;
+var GameModel = require('./models/game').Game;
 var helpers = require('./helpers/helpers');
 var cookie = require('cookie');
 
@@ -18,7 +18,7 @@ var app = express();
 
 // Database connection
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/' + appInfo.database.name);
+mongoose.connect(config.database.path);
 
 // Session storage, using MongoDB
 var MongoStore = require('connect-mongostore')(express);
@@ -58,7 +58,7 @@ app.all('/game/prepare/:id', helpers.requireAuthentication);
 
 // Production only
 if ('prod' == environment) {
-    console.log('Production mode. Version: ', appInfo.version);
+    console.log('Production mode. Version: ', packageInfo.version);
 }
 
 // Development only
@@ -69,7 +69,7 @@ if ('dev' == environment) {
         console.log("Node NOT Exiting...");
     });
 
-    console.log('Development mode. Version: ', appInfo.version);
+    console.log('Development mode. Version: ', packageInfo.version);
     app.use(express.errorHandler());
 }
 
@@ -86,14 +86,10 @@ app.get('/game/play/:id', gameController.playAction);
 app.get('/game/api/list', gameController.listActionApi);
 app.get('/game/api/find/:id', gameController.findOneApi);
 app.post('/game/api/update/:id', gameController.updateActionApi);
-//app.post('/game/api/finish-preparation/:id', gameController.finishPreparationApi);
 app.get('/game/api/players/remove/:id', gameController.removeGamePlayersApi);
-app.get('/verify/:id', userController.verifyUserAction);
 
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
-//io.set('log level', 2);
-var GameModel = require('./models/game').Game;
 
 io.sockets.on('connection', function (client) {
     var clientCookies = client.handshake.headers.cookie;
@@ -123,14 +119,6 @@ io.sockets.on('connection', function (client) {
     client.on('joinGame', function (emitData) {
         client['room'] = emitData.gameId;
         client['name'] = emitData.userName;
-
-        //Increased limit to 20 sockets. Just to be safe.
-        //TODO: Fix, doesn't work with socket 1.2.0
-//        if (io.sockets.clients(emitData.gameId).length >= 20) {
-//            client.emit('error', 'There are too many people in the room already, sorry');
-//
-//            return;
-//        }
 
         client.join(emitData.gameId);
 
