@@ -1,8 +1,12 @@
 # Agile Estimation
 
-## What is it?
+## Demo Video
 
-This is "Agile Estimation 3.0" – the best online tool based on the Team Estimation Game by Steve Bockman. It is designed for agile teams who estimate their effort for certain tasks.
+https://www.youtube.com/watch?v=pWf9A_qUUj4
+
+## What is this?
+
+"Agile Estimation 3.0" is an online tool based on the Team Estimation Game by Steve Bockman. It is designed for agile teams who estimate their effort for certain tasks.
 
 I call it 3.0 because I believe that this is the next level. Therefore this tool is considered to aim advanced agile people. I am not covering basic agile and estimation topic here.
 
