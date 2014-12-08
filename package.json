@@ -18,5 +18,8 @@
     },
     "devDependencies": {
     },
-    "main": "Gruntfile.js"
+    "main": "server.js",
+    "scripts" : {
+        "test" : "jasmine"
+    }
 }
