@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/thecatontheflat/agile-estimation.svg?branch=develop)](https://travis-ci.org/thecatontheflat/agile-estimation)
+
 # Agile Estimation
 
 ## Demo Video
