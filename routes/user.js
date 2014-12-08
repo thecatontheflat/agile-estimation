@@ -12,7 +12,7 @@ exports.registerAction = function (req, res) {
 
     UserModel.register(new UserModel({email: postedUser.email}), postedUser.password, function (error) {
         if (null === error) {
-            res.json(201, {success: {message: 'Verification email was sent'}});
+            res.json(201, {success: {message: 'Registered successfully. You can login now'}});
         } else {
             res.json(400, {error: helpers.mongooseErrorReport(error)});
         }

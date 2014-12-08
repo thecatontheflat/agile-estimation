@@ -1,10 +1,9 @@
 {
-    "name": "Agile Estimation",
+    "name": "Agile-Estimation",
     "description": "Agile Estimation Game",
     "version": "0.0.2",
     "private": true,
     "dependencies": {
-        "async": "^0.9.0",
         "connect-mongostore": "~0.1.0",
         "connect-multiparty": "^1.2.5",
         "cookie": "^0.1.2",
@@ -15,29 +14,18 @@
         "grunt-contrib-cssmin": "^0.10.0",
         "grunt-contrib-uglify": "^0.5.1",
         "jade": "^1.3.1",
-        "jsuri": "^1.3.0-beta.1",
         "libxmljs": "^0.9.0",
         "lodash": "^2.4.1",
-        "moment": "^2.8.1",
         "mongoose": "3.8",
         "mongoose-find-one-or-create": "^0.2.0",
         "multiparty": "^3.2.6",
-        "nodemailer": "^1.1.1",
         "passport": "~0.2.0",
         "passport-local": "~1.0.0",
         "passport-local-mongoose": "~0.3.0",
-        "request": "^2.40.0",
         "socket.io": "^1.2.0",
         "zeparser": "0.0.7"
     },
     "devDependencies": {
-        "grunt": "~0.4.4",
-        "grunt-contrib-uglify": "~0.2.7",
-        "grunt-contrib-watch": "~0.5.3",
-        "grunt-contrib-jade": "~0.8.0",
-        "grunt-open": "~0.2.2",
-        "grunt-shell-spawn": "~0.3.0",
-        "grunt-bower-task": "~0.3.4"
     },
     "main": "Gruntfile.js"
 }

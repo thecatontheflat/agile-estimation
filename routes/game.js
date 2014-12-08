@@ -1,11 +1,6 @@
-var multiparty = require('multiparty');
-var mongoose = require('mongoose');
 var helpers = require('../helpers/helpers');
 var GameModel = require('../models/game').Game;
 var cookie = require('cookie');
-var moment = require('moment');
-var request = require('request');
-var url = require('url');
 var helper = {
 };
 
