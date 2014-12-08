@@ -56,3 +56,4 @@ node server.js
 ```
 
 The application will be accessible via 3004 port
+http://localhost:3004/
