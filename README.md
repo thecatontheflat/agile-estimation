@@ -34,17 +34,20 @@ http://estimation.agile-values.com/
 
 ### How to run it locally
 
-Clone the project
+##### Clone the project
 ```
 git clone git@github.com:thecatontheflat/agile-estimation.git
 ```
 
-Edit your email settings for user verification
-
-Run the project
+##### Install dependencies
 ```
 cd agile-estimation
+npm install
+```
+
+##### Run the application
+```
 node server.js
 ```
 
-The app will be accessible via 3004 port
+The application will be accessible via 3004 port

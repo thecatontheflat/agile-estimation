@@ -1,9 +1,5 @@
 var CardModel = require('../models/game').Card;
 var GameModel = require('../models/game').Game;
-var moment = require('moment');
-var request = require('request');
-var url = require('url');
-var async = require('async');
 
 exports.importAction = function (req, res) {
     res.render('import');
