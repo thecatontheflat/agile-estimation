@@ -1,7 +1,6 @@
 var express = require('express');
 var packageInfo = require('./package.json');
 var config = require('./config.json');
-var routes = require('./routes');
 var indexController = require('./routes/index');
 var importController = require('./routes/import');
 var gameController = require('./routes/game');
@@ -9,8 +8,8 @@ var userController = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
 var UserModel = require('./models/user').User;
+var GameModel = require('./models/game').Game;
 var helpers = require('./helpers/helpers');
 var cookie = require('cookie');
 
@@ -91,7 +90,6 @@ app.get('/game/api/players/remove/:id', gameController.removeGamePlayersApi);
 
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
-var GameModel = require('./models/game').Game;
 
 io.sockets.on('connection', function (client) {
     var clientCookies = client.handshake.headers.cookie;
