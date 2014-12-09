@@ -47,9 +47,10 @@ cd agile-estimation
 cp config.json.dist config.json
 ```
 
-##### Install node dependencies
+##### Install node and bower dependencies
 ```
 npm install
+bower install
 ```
 
 ##### Run the application
