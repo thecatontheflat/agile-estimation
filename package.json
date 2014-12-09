@@ -20,6 +20,6 @@
   "devDependencies": {},
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/jasmine/bin/jasmine.js"
+    "test": "jasmine"
   }
 }

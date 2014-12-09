@@ -12,3 +12,6 @@ install:
 
 script:
   - npm test
+
+before_install:
+  - npm install -g jasmine
