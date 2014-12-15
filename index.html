@@ -1,55 +1,270 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Agile Estimation 3.0 by thecatontheflat</title>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="The Team Estimation Game is the best alternative estimation technique we’ve found so far to get a scrum team up-and-running with useful estimates. It plays like a game, feels like a game tastes like a game, but it accomplishes a valuable work: assigning story point estimates to user stories. Yes, this is quite obvious for agile software developers." name="description">
+  <meta content="" name="author">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Agile Estimation 3.0</h1>
-        <p>Agile Estimation 3.0</p>
+  <title>Agile Estimation 3.0</title>
 
-        <p class="view"><a href="https://github.com/thecatontheflat/agile-estimation">View the Project on GitHub <small>thecatontheflat/agile-estimation</small></a></p>
+  <link rel="stylesheet" href="http://estimation.agile-values.com/vendor/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://getbootstrap.com/examples/carousel/carousel.css">
 
+  <style type="text/css">
+    .fb_iframe_widget {
+      display: inline-block !important;
+      margin-left: 5px !important;
+      top: 5px;
+    }
+    #subscribeButton {
+    }
 
-        <ul>
-          <li><a href="https://github.com/thecatontheflat/agile-estimation/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/thecatontheflat/agile-estimation/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/thecatontheflat/agile-estimation">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h2>
-<a id="agile-estimation-30--what-is-it" class="anchor" href="#agile-estimation-30--what-is-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>Agile Estimation 3.0 – What is it?</h2>
+    #twitter-widget-0 {
+      position: relative;
+      top: 5px;
+    }
 
-<p>This is "Agile Estimation 3.0" – the best online tool based on the Team Estimation Game by Steve Bockman. It is designed for agile teams who estimate their effort for certain tasks.</p>
+    .container.marketing {
+      margin-top: 20px;
+    }
 
-<p>I call it 3.0 because I believe that this is the next level. Therefore this tool is considered to aim advanced agile people. I am not covering basic agile and estimation topic here.</p>
+    .btn-lg, .btn-group-lg > .btn {
+      font-size: 28px;
+    }
 
-<p>For more information about estimation, please refer to the <a href="http://google.com">Almighty</a></p>
+    .jumbotron {
+      border: 2px dashed #428bca;
+      padding-bottom: 5px;
+      padding-top: 48px;
+      background-color: white;
+    }
 
-<h2>
-<a id="the-idea" class="anchor" href="#the-idea" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Idea</h2>
+    .jumbotron p {
+      font-size: 21px;
+      font-weight: 200;
+      margin-bottom: 35px;
+    }
 
-<p>The idea of the “next generation estimation” is to increase performance and accuracy of estimation and reduce time waste at the same time. See, the main cause of slowness in the planning poker technique is that players have to make turns blindly.</p>
+    .powpromo {
+      float: right;
+      position: relative;
+    }
 
-<p>With comparative approach, players don’t estimate blindly and therefore the time is saved.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/thecatontheflat">thecatontheflat</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+    .footer {
+      background-color: black;
+      bottom: 0;
+      height: 30px;
+      position: fixed;
+      width: 100%;
+      padding: 0px;
+    }
+
+    .featurette-heading {
+      font-size: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Facebook -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="container marketing">
+  <div class="jumbotron">
+    <iframe width="500" height="310" src="http://www.youtube.com/embed/gKmqqxd67QI?rel=0" frameborder="0" allowfullscreen class="powpromo"></iframe>
+    <h1>Estimate Effectively!</h1>
+    <p class="lead"><strong>Agile Estimation 3.0</strong> is a technique of Scrum estimating. It takes your estimation process to the next level</p>
+
+    <p class="text-center">
+      <a role="button" href="http://estimation.agile-values.com" class="btn btn-lg btn-success">Get started</a>
+      <a role="button" href="http://estimation.agile-values.com/game/demo" class="btn btn-lg btn-warning">Try demo</a>
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <img style="width: 140px; height: 140px;" alt="Generic placeholder image"
+           src="http://agile-values.com/wp-content/uploads/2014/10/9-512.png"
+           class="">
+
+      <h2 class="btn-primary">Interactive Multiplayer</h2>
+
+      <p> Estimate efforts in the real time with your colleagues. All your actions will be instantly displayed for
+        all other participants. Drag a card from the deck, put it to the table and let the other player make a
+        turn. </p>
+      <!--<p><a role="button" href="#" class="btn btn-default">View details »</a></p>-->
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+    <div class="col-lg-4">
+      <img style="width: 140px; height: 140px;" alt="Generic placeholder image"
+           src="http://agile-values.com/wp-content/uploads/2014/10/grey_new_seo3-06-512.png"
+           class="">
+
+      <h2 class="btn-primary">Time Efficient</h2>
+
+      <p>All discussinos regarding misunderstandings are taking place on the fly, as you estimate. You don't have
+        blind turns here, therefore you don't wait long. This facilitates discussion on demand.</p>
+
+      <!--<p><a role="button" href="#" class="btn btn-default">View details »</a></p>-->
+    </div>
+    <div class="col-lg-4">
+      <img style="width: 140px; height: 140px;" alt="Generic placeholder image"
+           src="http://agile-values.com/wp-content/uploads/2014/10/smile-ninja-512.png"
+           class="">
+
+      <h2 class="btn-primary">Made by Scrummasters</h2>
+
+      <p>Been there, done that. We know the pain of the traditional planning poker, so we've tried our best to
+        implement an estimation game without all that boring stuff.</p>
+
+      <!--<p><a role="button" href="#" class="btn btn-default">View details »</a></p>-->
+    </div>
+  </div>
+
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading btn-info">
+        Setup a game
+        <!--<span class="text-muted">It'll blow your mind.</span>-->
+      </h2>
+
+      <p class="lead">
+        Create all cards one by one or <strong>import</strong> pack of issues <strong>from your issue tracker</strong>.
+        Once all cards are created, simply start the game and share the link with your colleagues.
+        Once clicked the link, they will join the same game room as you are in.
+      </p>
+    </div>
+    <div class="col-md-5">
+      <img alt="500x500" class="featurette-image img-responsive"
+           src="http://agile-values.com/wp-content/uploads/2014/10/create1.jpg">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-5">
+      <img alt="500x500" class="featurette-image img-responsive"
+           src="http://agile-values.com/wp-content/uploads/2014/10/edit.jpg">
+    </div>
+    <div class="col-md-7">
+      <h2 class="featurette-heading btn-info">
+        Sort the cards
+      </h2>
+
+      <p class="lead">
+        A game starts with 1 card laying on the table (this will be an anchor point for our future comparisons) and the deck of cards.
+        First player picks a card from the deck and moves it either on the left or on the right to the reference card, which lays on the table. <strong>Left – easier, right – more complex.</strong>
+        Turn goes to the next player.
+        This continues, until all cards are laid on the "table".
+      </p>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading btn-info">
+        Finally, estimate
+      </h2>
+
+      <p class="lead">
+        Once all cards are laid, you can now start assigning some values to them. This is done by dragging ranges.
+        Think of it as of assigning same estimates to the multiple cards at once.
+        Yes, you got it right and that's the point. Since all cards are already laid in the sequence, based on their complexity - <strong>estimating goes much easier</strong>.
+        The rules are the same as above - you change estimate ranges turn by turn and <strong>discuss if someone disagrees.</strong>
+      </p>
+    </div>
+    <div class="col-md-5">
+      <img alt="500x500" class="featurette-image img-responsive"
+           src="http://agile-values.com/wp-content/uploads/2014/10/estimate.jpg">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <iframe width="500" height="315" src="http://www.youtube.com/embed/j-Wdmqz04a4?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="col-md-5">
+      <h2 class="featurette-heading btn-info">
+        JIRA integration
+      </h2>
+
+      <p class="lead">
+        Setting up a game from JIRA issues is easy. <br/> Check out the video.
+      </p>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-5">
+      <h2 class="featurette-heading">
+        Watch the demo
+      </h2>
+
+      <p class="lead text-center">
+        <strong>or</strong> <a role="button" href="http://estimation.agile-values.com" class="btn btn-lg btn-success">Get started</a>
+        <strong>or</strong> <a role="button" href="http://estimation.agile-values.com/game/demo" class="btn btn-lg btn-warning">Try demo</a>
+        <br/>
+      </p>
+    </div>
+
+    <div class="col-md-7">
+      <iframe width="500" height="315" src="http://www.youtube.com/embed/pWf9A_qUUj4?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+</div>
+<footer class="footer text-center">
+  <a role="button" href="http://eepurl.com/7j3E1" target="_blank" class="btn btn-xs btn-info" id="subscribeButton">Subscribe for udpates</a>
+  <div class="fb-like" data-href="http://agile-values.com/" data-width="450" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-text="Agile Estimation 3.0 - an alternative to the planning poker" data-via="thecatontheflat">Tweet</a>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://agile-values.com/wp-content/themes/the-bootstrap-child/js/bootstrap.min.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-53205415-1', 'agile-values.com');
+  ga('send', 'pageview');
+</script>
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
