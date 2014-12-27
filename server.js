@@ -22,7 +22,7 @@ var environment = (process.argv[2] || 'prod');
 var app = express();
 
 // Database connection
-var mongoose = require('mongoose');
+var mongoose = require('mongoose', {server: {auto_reconnect: true}});
 console.log('Connecting to ' + process.env.MONGOLAB_URI);
 mongoose.connect(process.env.MONGOLAB_URI || config.database.path);
 
