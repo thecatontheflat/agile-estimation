@@ -23,6 +23,7 @@ var app = express();
 
 // Database connection
 var mongoose = require('mongoose');
+console.log('Connecting to ' + process.env.MONGOLAB_URI);
 mongoose.connect(process.env.MONGOLAB_URI || config.database.path);
 
 // Session storage, using MongoDB
