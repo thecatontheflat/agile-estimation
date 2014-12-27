@@ -25,7 +25,7 @@ var MongoStore = require('connect-mongostore')(express);
 var sessionStoreHolder = new MongoStore({'db': 'sessions'});
 
 // All environments
-app.set('port', 3004);
+app.set('port', (process.env.PORT || 3004));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.favicon());
