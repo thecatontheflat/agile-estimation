@@ -23,8 +23,8 @@ var app = express();
 
 // Database connection
 var mongoose = require('mongoose', {server: {auto_reconnect: true}});
-console.log('Connecting to ' + process.env.MONGOLAB_URI);
-mongoose.connect(process.env.MONGOLAB_URI || config.database.path);
+console.log('Connecting to ' + process.env.MONGOSOUP_URL);
+mongoose.connect(process.env.MONGOSOUP_URL || config.database.path);
 
 // Session storage, using MongoDB
 var MongoStore = require('connect-mongostore')(express);
