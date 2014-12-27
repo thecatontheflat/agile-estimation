@@ -1,6 +1,11 @@
 var express = require('express');
 var packageInfo = require('./package.json');
-var config = require('./config.json');
+try {
+    var config = require('./config.json');
+} catch (err) {
+    var config = require('./config.sample.json');
+}
+
 var indexController = require('./routes/index');
 var importController = require('./routes/import');
 var gameController = require('./routes/game');
@@ -150,7 +155,8 @@ io.sockets.on('connection', function (client) {
             }
 
             game.markModified('players');
-            game.save(function (error, game) {});
+            game.save(function (error, game) {
+            });
 
 //            io.sockets.emit('updateGameField', game);
             io.sockets.emit('joinGame', game);
