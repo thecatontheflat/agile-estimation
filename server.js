@@ -28,7 +28,7 @@ mongoose.connect(process.env.MONGOSOUP_URL || config.database.path);
 
 // Session storage, using MongoDB
 var MongoStore = require('connect-mongostore')(express);
-var sessionStoreHolder = new MongoStore({'db': 'sessions'});
+var sessionStoreHolder = new MongoStore({mongooseConnection: mongoose.connection});
 
 // All environments
 app.set('port', (process.env.PORT || 3004));
