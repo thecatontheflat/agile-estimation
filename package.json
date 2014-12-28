@@ -20,6 +20,7 @@
   "devDependencies": {},
   "main": "server.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "postinstall": "bower install"
   }
 }
