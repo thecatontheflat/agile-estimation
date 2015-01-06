@@ -1,0 +1,17 @@
+language: node_js
+
+services:
+  - mongodb
+
+node_js:
+  - "0.10"
+
+install:
+  - npm install
+  - bower install
+
+script:
+  - npm test
+
+before_install:
+  - npm install -g jasmine

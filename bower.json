@@ -31,6 +31,7 @@
     "jquery-migrate": "~1.2.1",
     "angular-animate": "~1.2.16",
     "angular-markdown-filter": "*",
-    "ng-file-upload-shim": "~1.6.12"
+    "ng-file-upload-shim": "~1.6.12",
+    "jasmine": "~2.1.3"
   }
 }

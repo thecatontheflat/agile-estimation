@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/thecatontheflat/agile-estimation.svg?branch=develop)](https://travis-ci.org/thecatontheflat/agile-estimation)
+
 # Agile Estimation
 
 ## Demo Video
@@ -39,10 +41,16 @@ http://estimation.agile-values.com/
 git clone git@github.com:thecatontheflat/agile-estimation.git
 ```
 
-##### Install dependencies
+##### Copy and edit config
 ```
 cd agile-estimation
+cp config.json.dist config.json
+```
+
+##### Install node and bower dependencies
+```
 npm install
+bower install
 ```
 
 ##### Run the application
@@ -51,3 +59,5 @@ node server.js
 ```
 
 The application will be accessible via 3004 port
+
+http://localhost:3004/

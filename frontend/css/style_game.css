@@ -1,5 +1,5 @@
 body {
-    background-color: #fafafa;
+    /*background-color: #fafafa;*/
 }
 
 .container {
@@ -24,6 +24,7 @@ body {
 }
 
 .cards-stack {
+    z-index: 5;
     position: absolute;
     width: 120px;
     height: 165px;
@@ -88,7 +89,7 @@ body {
     height: 15em;
     width: 45%;
     display: inline-block;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 header > h2,
@@ -264,15 +265,15 @@ header > h1 {
 
 }
 
-#slider:before {
-    display: block;
-    background-image: url('../img/rangeBar.png');
-    background-position: 0 10px;
-    background-repeat: repeat-x;
-    height: 30px;
-    position: absolute;
-    content: ""
-}
+/*#slider:before {*/
+    /*display: block;*/
+    /*background-image: url('../img/rangeBar.png');*/
+    /*background-position: 0 10px;*/
+    /*background-repeat: repeat-x;*/
+    /*height: 30px;*/
+    /*position: absolute;*/
+    /*content: ""*/
+/*}*/
 
 #range td {
     border: none;
@@ -281,8 +282,8 @@ header > h1 {
 .rangeGrip {
     width: 10px;
     height: 19px;
-    cursor: e-resize;
-    background-image: url('../img/slider.png');
+    cursor: pointer;
+    /*background-image: url('../img/slider.png');*/
     z-index: 8;
 }
 
@@ -292,10 +293,11 @@ header > h1 {
 
 .value-range {
     text-align: center;
-    top: 25px;
-    height: 60px;
+    /*top: 25px;*/
+    /*height: 60px;*/
     position: relative;
-    font-weight: bold;
+    /*font-weight: bold;*/
+    color: darkgray;
 }
 
 .table-exports {
@@ -305,13 +307,13 @@ header > h1 {
 
 span.icon-type {
     position: absolute;
-    left: 20px;
+    left: 5px;
     top: 5px;
 }
 
 span.icon-priority {
     position: absolute;
-    left: 5px;
+    left: 20px;
     top: 5px;
 }
 
@@ -321,4 +323,55 @@ span.reporter-label {
     top: 26px;
     font-size: 12px;
     color: #D3D3D3;
+}
+
+#range td {
+    background-color: #fafafa;
+    border-left: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.rangeGrip:before {
+    border: 2px solid darkgray;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 8px;
+    position: relative;
+    top: -6px;
+    width: 8px;
+}
+
+.rangeDrag .rangeGrip:before {
+    height: 77px;
+    top: -76px;
+    border-radius: 0;
+    border: 1px dotted grey;
+}
+
+.rangeGrip:after {
+    border: 2px solid darkgrey;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 8px;
+    position: relative;
+    top: 27px;
+    width: 8px;
+}
+
+.rangeDrag .rangeGrip:after {
+    top: -42px;
+}
+
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+    margin-left: -15px;
+}
+
+.cards-counter {
+    position: absolute;
+    margin-left: 50px;
+    color: darkgray;
 }

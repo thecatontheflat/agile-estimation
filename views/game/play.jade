@@ -3,11 +3,11 @@ extends ../layout
 block angularVariables
     - var angularApp = 'playGame'
 block jsScripts
-    script(src='/vendor/jquery-migrate/jquery-migrate.min.js')
+    script(src='/bower_components/jquery-migrate/jquery-migrate.min.js')
     script(src='/js/colResizable-1.3.min.js')
-    script(src='https://cdn.socket.io/socket.io-1.2.0.js')
+    script(src='/socket.io/socket.io.js')
     script(src='/modules/eg.socket.js')
-    script(src='/vendor/angular-sanitize/angular-sanitize.min.js')
+    script(src='/bower_components/angular-sanitize/angular-sanitize.min.js')
     script(src='/modules/eg.sortableCards.js')
     script(src='/modules/eg.jiraREST.js')
     script(src='/modules/eg.routes.js')
@@ -17,7 +17,7 @@ block jsScripts
     script(src='/modules/eg.gamePlay.js')
 
 block cssFiles
-    link(rel="stylesheet", href="/css/style_game_3.css")
+    link(rel="stylesheet", href="/css/style_game.css")
     link(rel="stylesheet", href="/css/jquery-ui.min.css")
 
 block gamePlay
@@ -35,26 +35,10 @@ block gamePlay
                     a(ng-hide="gameFinished", type="button", ng-click="gameSocket.emitBusyUI()").btn.btn-xs.btn-warning Lock UI
                     | &nbsp
                     a(ng-hide="gameFinished", type="button", ng-click="gameSocket.emitFreeUI()").btn.btn-xs.btn-warning Unlock UI
-                        //li: button(type="button", ng-click="isExportFormOpen = !isExportFormOpen").btn.btn-xs.btn-warning Export
-                //table(ng-show="isExportFormOpen").table.table-condensed.table-bordered.table-exports
-                //    thead
-                //        tr
-                //            th
-                //            th.col-md-1 estimation
-                //    tbody(ng-model="game.cards")
-                //        tr(ng-repeat="card in game.cards")
-                //            td: input(type="text", value="{{ card.key }}: {{ card.title }}", disabled).form-control.input-sm
-                //            td: input(type="text", ng-model="card.estimate").form-control.input-sm
-                //        tr
-                //            //td: input(type="text", ng-model="exportField", placeholder="Choose a field to export").form-control.input-sm
-                //            td
-                //            td(ng-hide="gameExported"): button(btn-label, type="button", ng-click="sendToJira($event)").btn.btn-sm.btn-success Send to Jira
-                //            td(ng-show="gameExported") Exported
         .navbar.navbar-default#gameParticipants
             .container
                 .collapse.navbar-collapse
                     ul.nav.navbar-nav
-                        //li(ng-repeat="player in game.players track by $index", ng-model="game.players", ng-if="player.isConnected"): img(ng-src="{{ player.avatar }}", title="{{ player.name }}").img-thumbnail
                         li(ng-repeat="player in game.players track by $index", ng-model="game.players", ng-if="player.isConnected"): button(type="button", title="{{ player.name }}", alt="{{ player.name }}").btn.btn-default {{ player.name|limitTo:5 }}
         #wrap
             #cards-full
