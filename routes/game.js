@@ -15,7 +15,7 @@ exports.createAction = function (req, res) {
 };
 
 exports.listActionApi = function (req, res) {
-    GameModel.find({owner: req.user.email}).lean().exec(function (err, gamesList) {
+    GameModel.find({owner: req.user.email}, function (err, gamesList) {
         var games = {
             prepareGames: [],
             activeGames: [],
@@ -46,7 +46,7 @@ exports.prepareAction = function (req, res) {
 
 exports.findOneApi = function (req, res) {
     var condition = {_id: req.params.id};
-    GameModel.findOne(condition).lean().exec(function (err, game) {
+    GameModel.findOne(condition, function (err, game) {
         res.json(game);
     });
 };
