@@ -1,26 +1,16 @@
 var helpers = require('../helpers/helpers');
 var GameModel = require('../models/game').Game;
 var cookie = require('cookie');
-var helper = {
-};
 
 exports.createAction = function (req, res) {
-    var condition = {owner: req.user.email, creator: req.user.email};
-    GameModel.findOne(condition).lean().exec(function (err, existingGame) {
-        var game = new GameModel();
+    var game = new GameModel();
 
-        game.state = 'prepare';
-        game.owner = req.user.email;
-        game.creator = req.user.email;
-        game.save(function (error, game) {
-            if (error) {
-                res.json(400, {error: helpers.mongooseErrorReport(error)});
-            } else {
-                var url = '/game/prepare/' + game._id;
-
-                res.json(201, {url: url});
-            }
-        });
+    game.state = 'prepare';
+    game.owner = req.user.email;
+    game.creator = req.user.email;
+    game.save(function (error, game) {
+        var url = '/game/prepare/' + game._id;
+        res.json(201, {url: url});
     });
 };
 
