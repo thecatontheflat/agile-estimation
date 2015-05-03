@@ -70,10 +70,6 @@ module.exports = function (io) {
         });
 
         client.on('updateGameField', function (data) {
-            if (data.creator == "vitaliy.zurian@gmail.com" && data.name == "Demo Game") {
-                return;
-            }
-
             var condition = {_id: data._id};
             GameModel.findOne(condition, function (err, game) {
                 game.cardsRow = helpers.cleanArray(data.cardsRow);

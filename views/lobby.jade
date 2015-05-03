@@ -10,9 +10,6 @@ block content
     div.content(ng-controller="LobbyController")
         div.content-header.lead
             br
-            .pull-left
-                button(type="button", data-toggle="popover").btn.btn-default.dropdown-toggle#helpButton Help
-                    span.caret
             form(role="form", fm-action, action="/game/create", method="post").form-inline
                 include commonParts/message
                 div.form-group

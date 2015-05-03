@@ -21,19 +21,6 @@ block content
     div.content(ng-controller="GamePreparationController", ng-init="init('#{id}')")
         include preparation/new-card
 
-        //p.alert.alert-danger
-        //    | You can only create cards from existing issues. <br/>
-        //    | To do this - either import issues by label (enter label in the box below and click Import)
-        //    | or by issue key (click Add new Card in the bottom)
-
-        //form.form-horizontal
-        //    div(ng-class="importFormClass || 'has-warning'").form-group
-        //        label.col-sm-5.control-label {{ importFormLabel || 'Import from label' }}
-        //        div.col-sm-2
-        //            input(type="text", id="gameName", placeholder="Enter label", ng-model="label").form-control
-        //        div.col-sm-5
-        //            button(type="button", ng-click="importFromJiraREST($event)", btn-label).btn.btn-success Import
-
         form.form-horizontal
             div.form-group
                 div.col-sm-4

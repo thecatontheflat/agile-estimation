@@ -42,11 +42,3 @@ angular.module("lobby", ['backendRoutes', 'buttonLabel'])
             scope.formAction = attributes.action;
         }
     });
-
-$(function() {
-    $('#helpButton').popover({
-        html: true,
-        content: "<p>vitaliy.zurian@gmail.com</p><p>skype: zurian.vitaliy</p>",
-        placement: "bottom"
-    });
-});
